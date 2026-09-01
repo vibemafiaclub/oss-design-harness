@@ -1,0 +1,32 @@
+# ── 비밀·자격증명 — 절대 커밋 금지 ──────────────────────────────
+# 이 레포는 공개 오픈소스다. Figma PAT를 쓰는 경우 반드시 아래 경로에만 둔다.
+# (Figma 공식 원격 MCP는 OAuth를 쓰므로 토큰 파일 자체가 필요 없다 — docs/figma-mcp.md 참고)
+.env
+.env.*
+!.env.example
+.mcp.json
+*.token
+*.pat
+*token*
+*secret*
+*credential*
+# ↑ *token* 은 의도적으로 넓게 잡았다. figma-token.txt 같은 임의 파일명을 놓치지 않기 위함이다.
+#   디자인 토큰 파일을 커밋해야 하면 여기에 예외를 추가한다 (예: !design-tokens.json)
+.claude/settings.local.json
+
+# ── 하네스 실행 중간물 ────────────────────────────────────────
+# 재생성 가능하고, 실제 업무 Figma 파일의 내용이 들어갈 수 있다.
+.cache/
+renders/
+*.node-snapshot.json
+
+# ── OS·에디터 ────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# 참가자 산출물(brief.md·decisions.md)은 의도적으로 무시하지 않는다 —
+# 상호 심사·결과 비교에 쓰이므로 공유되어야 한다. 단 그 안에 토큰을 적지 않는다.
